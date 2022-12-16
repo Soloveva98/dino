@@ -11,14 +11,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Soloveva98/dino.git"
+		"url": "git+https://github.com/Soloveva98/dinoGame.git"
 	},
 	"author": "anastacia",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Soloveva98/dino/issues"
+		"url": "https://github.com/Soloveva98/dinoGame/issues"
 	},
-	"homepage": "https://github.com/Soloveva98/dino#readme",
+	"homepage": "https://github.com/Soloveva98/dinoGame",
 	"devDependencies": {
 		"babel-loader": "^9.1.0",
 		"clean-webpack-plugin": "^4.0.0",
