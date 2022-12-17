@@ -1,3 +1,4 @@
+
 import './scss/index.scss';//стили
 //подключаем графику
 import {
@@ -7,6 +8,7 @@ import {
 	platformImage3, playerImage3, playerImageLeft3, playerCollisionLeft3, playerCollisionRight3, background3, platformSmallImage3, platformMini3, stoneImage3, unit3, unitRight3, boss3, bossRight3, win3, winMountain3
 } from './images.js';
 import { canvas, scoreEl, coinEl, heartEl, numberLevel, bg, winLevel3, scoreWin, coinWin, heartWin, restart } from './htmlElements';//импортируем все дом элементы
+
 
 const c = canvas.getContext('2d');
 

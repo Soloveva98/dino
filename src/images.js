@@ -2,10 +2,7 @@
 export function createImage(imageSrc) {
 	const image = new Image();
 	image.src = imageSrc;
-	image.onload = function () {
-		console.log("done");
-		return image;
-	}
+	return image;
 };
 
 //Подгрузка всех изображений
