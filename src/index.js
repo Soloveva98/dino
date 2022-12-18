@@ -1,4 +1,3 @@
-
 import './scss/index.scss';//стили
 //подключаем графику
 import {
@@ -132,7 +131,7 @@ class Coin {
 
 		this.width = 35;
 		this.height = 35;
-		this.image = createImage('./../static/coin.png');
+		this.image = createImage('static/coin.png');
 	}
 
 	draw() {
@@ -1377,14 +1376,17 @@ function animate() {
 	}
 };
 
-//Инициализируем уровень
-levels[level].init();
-
-//запускаем анимацию
-animate();
-
-
 //прослушивание событий
+window.onload = function () {
+	console.log('onload');
+
+	//Инициализируем уровень
+	levels[level].init();
+
+	//запускаем анимацию
+	animate();
+};
+
 //нажатие клавиш wsda
 addEventListener('keydown', ({ keyCode }) => {
 	if (keyCode === 65 || keyCode === 37) {

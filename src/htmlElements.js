@@ -1,5 +1,7 @@
 //Элементы html
 export const canvas = document.querySelector('canvas');
+export const coinBlock = document.querySelector('.coin__img');
+export const lifeBlock = document.querySelector('.life__img');
 export const scoreEl = document.querySelector('#scoreEl');
 export const coinEl = document.querySelector('#coinEl');
 export const heartEl = document.querySelector('#heartEl');
@@ -11,3 +13,4 @@ export const scoreWin = document.querySelector('#scoreWin');
 export const coinWin = document.querySelector('#coinWin');
 export const heartWin = document.querySelector('#heartWin');
 export const restart = document.querySelector('.restart');
+

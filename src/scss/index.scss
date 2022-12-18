@@ -176,14 +176,25 @@ h1{
 	align-items: center;
 	& div {
 		margin-top: 30px;
+		& img {
+			display: inline-block;
+			margin-right: 20px;
+		}
 		&:nth-child(1){
 			color:rgb(68, 236, 76);
 		}
 		&:nth-child(2) {
 			color: #FFD72A;
+			display: flex;
+			align-items: center;
 		}
 		&:nth-child(3) {
 			color: #C0392B;
+			display: flex;
+			align-items: center;
+			& img{
+				width: 42px;
+			}
 		}
 	}
 }
