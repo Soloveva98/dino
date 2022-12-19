@@ -19,6 +19,10 @@ let score = 0;
 let scoreCoins = 0;
 let scoreLife = 100;
 
+//Переменные статистики в конце игры при выигрыше
+let scoreWinLevel = 0;
+let coinsWinLevel = 0;
+
 //для начисления 10 очков за каждые 10 сек игры
 let timerLife;
 
@@ -531,6 +535,9 @@ let levels = {
 			scoreLife = 100;
 			heartEl.innerHTML = scoreLife;
 
+			scoreWinLevel = 0;
+			coinsWinLevel = 0;
+
 			//начисляем 10 очков за каждые 10 секунд игры
 			timerLife = setInterval(() => {
 				score += 10;
@@ -810,6 +817,14 @@ let levels = {
 					imageRight: unit2
 				}),
 			];
+
+			//обнуляем счет
+			score = 0;
+			scoreEl.innerHTML = score;
+
+			//обнуляем счет монеток
+			scoreCoins = 0;
+			coinEl.innerHTML = scoreCoins;
 
 			//восстанавливаем хп
 			scoreLife = 100;
@@ -1110,6 +1125,14 @@ let levels = {
 				}),
 			];
 
+			//обнуляем счет
+			score = 0;
+			scoreEl.innerHTML = score;
+
+			//обнуляем счет монеток
+			scoreCoins = 0;
+			coinEl.innerHTML = scoreCoins;
+
 			//восстанавливаем хп
 			scoreLife = 100;
 			heartEl.innerHTML = scoreLife;
@@ -1129,8 +1152,10 @@ let levels = {
 function winGame() {
 	if (level === 3) {
 		conditionWin = true;
-		scoreWin.innerHTML = score;
-		coinWin.innerHTML = scoreCoins;
+		scoreWinLevel += score;
+		coinsWinLevel += scoreCoins;
+		scoreWin.innerHTML = scoreWinLevel;
+		coinWin.innerHTML = coinsWinLevel;
 		heartWin.innerHTML = scoreLife;
 		bg.style.opacity = 1;
 		winLevel3.style.opacity = 1;
@@ -1140,6 +1165,8 @@ function winGame() {
 	}
 
 	conditionWin = true;
+	scoreWinLevel += score;
+	coinsWinLevel += scoreCoins;
 	level++;
 	bg.style.opacity = 1;
 	numberLevel.innerHTML = `level ${level}`;
@@ -1199,7 +1226,6 @@ function collision(obj1, obj2, str) {
 		} else if (str === 'unit') {
 			if (obj2.image === unit || obj2.image === unit2 || obj2.image === unit3) {
 				obj1.position.x += 80;
-
 				scoreLife -= 20;
 				heartEl.innerHTML = scoreLife;
 
@@ -1365,7 +1391,15 @@ function animate() {
 	});
 
 	//условие проигрыша
-	if (player.position.y > canvas.height || scoreLife === 0) {
+	if (player.position.y > canvas.height || scoreLife <= 0) {
+		//обнуляем счет
+		score = 0;
+		scoreEl.innerHTML = score;
+
+		//обнуляем счет монеток
+		scoreCoins = 0;
+		coinEl.innerHTML = scoreCoins;
+
 		clearInterval(timerLife);
 		levels[level].init();
 	}
@@ -1416,6 +1450,8 @@ addEventListener('keyup', ({ keyCode }) => {
 //обработчик кнопки рестарта игры
 restart.addEventListener('click', () => {
 	level = 1;
+	scoreWinLevel = 0;
+	coinsWinLevel = 0;
 	conditionWin = false;
 	numberLevel.innerHTML = '';
 	bg.style.opacity = 0;
