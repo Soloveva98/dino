@@ -1,4 +1,4 @@
-# :t-rex: Браузерная игра «Динозаврик в поисках приключений» на JS
+# :t-rex: Браузерная игра «Дино в поисках приключений» на JS
 
 #### :hammer_and_wrench: Стек технологий:
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
